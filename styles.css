@@ -139,15 +139,28 @@ h6 {
 
 #navbar {
     padding-top: 15px;
-    justify-content: initial;
+    justify-content: space-between;
 }
 
 #logo {
     margin: 0 90px;
 }
 
+#logo-hidden {
+    display: none;
+}
+
 #logo img {
     width: 65px;
+}
+
+#burger-icon-nav {
+    color: white;
+    transform: scale(2.5);
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-right: 90px;
 }
 
 #navbar nav ul li {
@@ -606,10 +619,48 @@ h6 {
     #footer-contact {
         margin-right: 120px;
     }
-
 }
 
 @media(max-width: 1000px) {
+    #burger-icon-nav {
+        display: initial;
+    }
+
+    #logo-hidden {
+        display: initial;
+        z-index: 3;
+    }
+
+    #logo-hidden img {
+        width: 300px;
+    }
+
+    #nav-links {
+        flex-direction: column;
+        z-index: 2;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 150%;
+        transform: translate(-50%, 0);
+        height: 100%;
+        width: 100%;
+    }
+
+    .nav-links-display {
+        left: 50% !important;
+    }
+
+    #navbar nav ul li {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    #navbar nav ul li a {
+        color: black;
+        font-size: 1.1rem;
+    }
+
     .showcase-container-box {
         height: 450px;
     }
@@ -669,6 +720,10 @@ h6 {
 }
 
 @media(max-width: 750px) {
+    #burger-icon-nav {
+        margin-right: 30px;
+    }
+
     .img-header {
         height: 40%;
         margin-right: 5%;
